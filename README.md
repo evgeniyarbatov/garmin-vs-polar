@@ -2,6 +2,8 @@
 
 Compare recordings from Garmin eTrex Solar and Polar Vantage V with the actual route.
 
+Write up of findings: https://medium.com/@arbatov/two-views-of-one-run-10739b78b4e6
+
 ## Metrics
 
 These are the metrics I use for comparison:

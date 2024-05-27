@@ -7,22 +7,35 @@ import matplotlib.pyplot as plt
 import contextily as ctx
 
 from pytz import timezone
+from geopy.distance import geodesic
 
 def parse_gpx(filepath):
   gpx_file = open(filepath, 'r')
   gpx = gpxpy.parse(gpx_file)
 
   data = []
+  distance = 0
+  prev_lat, prev_lng = None, None
+
   for track in gpx.tracks:
     for segment in track.segments:
       for point in segment.points:
+        lat, lng = point.latitude, point.longitude,
+
         time = point.time.astimezone(timezone('Asia/Singapore')) if point.time else None
+
+        if prev_lat != None and prev_lng != None:
+          distance += geodesic((prev_lat, prev_lng), (lat, lng)).meters / 1000.0
+
         data.append({
           'time': time,
-          'latitude': point.latitude, 
-          'longitude': point.longitude,
+          'latitude': lat, 
+          'longitude': lng,
           'elevation': point.elevation,
+          'distance': distance,
         })
+
+        prev_lat, prev_lng = lat, lng
 
   df = pd.DataFrame(data)
   
@@ -65,6 +78,16 @@ def main(args):
   plt.legend()
   plt.grid(True)
   plt.savefig(output_dir + '/' + 'elevation.png')
+
+  plt.figure(figsize=(12, 6))
+  plt.plot(polar_df['time'], polar_df['distance'], color='blue', label='Polar')
+  plt.plot(garmin_df['time'], garmin_df['distance'], color='red', label='Garmin')
+  plt.xlabel('Time')
+  plt.ylabel('Distance (km)')
+  plt.title('Distance over Time')
+  plt.legend()
+  plt.grid(True)
+  plt.savefig(output_dir + '/' + 'distance.png')
 
 if __name__ == "__main__":
     main(sys.argv[1:])

@@ -25,5 +25,10 @@ Extras:
 
 ## Hardware
 
-- [Garmin eTrex Solar](https://www.garmin.com.sg/products/outdoor/etrex-solar/)
-- [Polar Vantage V](https://support.polar.com/e_manuals/vantage-v/polar-vantage-v-user-manual-english/content/introduction.htm)
+- [Garmin eTrex Solar](https://www.garmin.com.sg/products/outdoor/etrex-solar/) (Nov 16, 2023)
+- [Polar Vantage V](https://support.polar.com/e_manuals/vantage-v/polar-vantage-v-user-manual-english/content/introduction.htm) (Sept 13, 2018)
+
+## Questions
+
+- What is the average accuracy of the GPS? 
+- Is either Garmin or Polar better at recording the route or some aspect of it?

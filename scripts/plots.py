@@ -1,13 +1,17 @@
 import gpxpy
 import sys
 import os
+import matplotlib
 
 import pandas as pd
 import matplotlib.pyplot as plt
 import contextily as ctx
+import matplotlib.dates as mdates
 
 from pytz import timezone
 from geopy.distance import geodesic
+
+matplotlib.rcParams['timezone'] = 'Asia/Singapore'
 
 def parse_gpx(filepath):
   gpx_file = open(filepath, 'r')
@@ -41,17 +45,6 @@ def parse_gpx(filepath):
   
   return df
 
-def plot_location(df, label, color, output_dir, filename):
-  plt.figure(figsize=(12, 6))
-  plt.plot(df['longitude'], df['latitude'], color=color, linestyle='-', label=label)
-  ctx.add_basemap(plt.gca(), crs='EPSG:4326', source=ctx.providers.OpenStreetMap.Mapnik)
-  plt.xlabel('Longitude')
-  plt.ylabel('Latitude')
-  plt.title('Latitude and Longitude Plot')
-  plt.legend()
-  plt.grid(True)
-  plt.savefig(output_dir + '/' + filename)
-
 def main(args):
   input_dir = args[0]
   output_dir = args[1]
@@ -64,9 +57,16 @@ def main(args):
   route_df = parse_gpx(input_dir + '/route.gpx')
   elevation_df = parse_gpx(input_dir + '/elevation.gpx')
 
-  plot_location(polar_df, 'Polar', 'blue', output_dir, 'polar-location.png')
-  plot_location(garmin_df, 'Garmin', 'red', output_dir, 'garmin-location.png')
-  plot_location(route_df, 'Route', 'black', output_dir, 'route-location.png')
+  plt.figure(figsize=(15, 8))
+  plt.plot(polar_df['longitude'], polar_df['latitude'], color='blue', label='Polar')
+  plt.plot(garmin_df['longitude'], garmin_df['latitude'], color='red', label='Garmin')
+  plt.plot(route_df['longitude'], route_df['latitude'], color='black', label='Route')
+  ctx.add_basemap(plt.gca(), crs='EPSG:4326', source=ctx.providers.OpenStreetMap.Mapnik)
+  plt.legend()
+  plt.xticks([], [])
+  plt.yticks([], [])
+  plt.tick_params(axis='both', which='both', bottom=False, top=False, left=False, right=False)
+  plt.savefig(output_dir + '/' + 'location.png')
 
   plt.figure(figsize=(12, 6))
   plt.plot(polar_df['time'], polar_df['elevation'], color='blue', label='Polar')
@@ -74,20 +74,10 @@ def main(args):
   plt.plot(elevation_df['time'], elevation_df['elevation'], color='black', label='Actual elevation')
   plt.xlabel('Time')
   plt.ylabel('Elevation (m)')
-  plt.title('Elevation over Time')
   plt.legend()
   plt.grid(True)
+  plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
   plt.savefig(output_dir + '/' + 'elevation.png')
-
-  plt.figure(figsize=(12, 6))
-  plt.plot(polar_df['time'], polar_df['distance'], color='blue', label='Polar')
-  plt.plot(garmin_df['time'], garmin_df['distance'], color='red', label='Garmin')
-  plt.xlabel('Time')
-  plt.ylabel('Distance (km)')
-  plt.title('Distance over Time')
-  plt.legend()
-  plt.grid(True)
-  plt.savefig(output_dir + '/' + 'distance.png')
 
 if __name__ == "__main__":
     main(sys.argv[1:])

@@ -17,5 +17,5 @@ Extras:
 
 ## Hardware
 
-- Garmin eTrex Solar: [link](https://www.garmin.com.sg/products/outdoor/etrex-solar/)
-- Pola Vantage V: [lint](https://support.polar.com/e_manuals/vantage-v/polar-vantage-v-user-manual-english/content/introduction.htm)
+- [Garmin eTrex Solar](https://www.garmin.com.sg/products/outdoor/etrex-solar/)
+- [Polar Vantage V](https://support.polar.com/e_manuals/vantage-v/polar-vantage-v-user-manual-english/content/introduction.htm)

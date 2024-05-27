@@ -1,13 +1,21 @@
 # Garmin vs Polar
 
-Compare run recordins from Garmin Extrex Solar and Polar Vantage V with the actual route.
+Compare recordins from Garmin Extrex Solar and Polar Vantage V with the actual route.
+
+## Metrics
+
+These are the metrics I use for comparison:
+
+- location
+- elevation 
+- distance
 
 ## Structure
 
 Main:
 
 - `data`: raw GPX files from Garmin Explore and Polar Flow
-- `metadata`: metadata related to the run like the actual route, elevation and weather
+- `metadata`: metadata related to the run like the actual route
 - `scripts`: scripts which take the raw data and generate graphs
 
 Extras:

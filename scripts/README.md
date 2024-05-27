@@ -16,6 +16,6 @@ Location, evelation and distance plots:
 
 ```
 python plots.py \
-../data/27-05-2023
+../data/27-05-2023 \
 ../metadata/27-05-2023
 ```

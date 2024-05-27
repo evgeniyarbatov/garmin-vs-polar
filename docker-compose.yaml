@@ -1,0 +1,15 @@
+services:
+  postgis:
+    build:
+      context: ./postgis
+      dockerfile: Dockerfile
+    container_name: "garmin-polar-postgis"
+    ports:
+      - 5432:5432
+    networks:
+      - default
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge

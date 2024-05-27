@@ -12,10 +12,18 @@ pip install -r requirements.txt
 
 ## Create plots
 
-Location, evelation and distance plots:
+Location, elevation and distance plots:
 
 ```
 python plots.py \
 ../data/27-05-2023 \
 ../metadata/27-05-2023
+```
+
+## Import to PostGIS
+
+```
+python postgis-import.py \
+../data/27-05-2023 \
+../postgis/data/
 ```

@@ -1,0 +1,3 @@
+- What is the average accuracy of the GPS? 
+- Is either Garmin or Polar better at recording the route or some aspect of it?
+- Pros and cons of each device

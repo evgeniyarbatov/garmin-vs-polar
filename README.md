@@ -1,2 +1,3 @@
-# garmin-vs-polar
-Compare GPX accuracy between Garmin Etrex and Polar Vantage V
+# Garmin vs Polar
+
+Compare run recordins from Garmin Extrex Solar and Polar Vantage V with the actual route.

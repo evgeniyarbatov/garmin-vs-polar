@@ -1,6 +1,6 @@
 # Garmin vs Polar
 
-Compare recordings from Garmin eTrex Solar and Polar Vantage V with the actual route.
+Compare recordings from Garmin and Polar with the actual route.
 
 Write up of findings: https://medium.com/@arbatov/two-views-of-one-run-10739b78b4e6
 

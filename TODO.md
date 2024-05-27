@@ -1,4 +1,4 @@
 - Script to extract segment from GPX route given start and end coordinates [DONE]
-- Get elevation data from https://open-elevation.com with Docker. We will compare elevation data with this
+- Get elevation data [DONE]
 - I need a way to remove certain segments where I know that I deviated from the route
 - Create JSON format which is easy to load into Pandas and analyze later for comparison. This contains all the data.

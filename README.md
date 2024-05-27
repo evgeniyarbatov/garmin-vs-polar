@@ -1,6 +1,6 @@
 # Garmin vs Polar
 
-Compare recordins from Garmin Extrex Solar and Polar Vantage V with the actual route.
+Compare recordings from Garmin eTrex Solar and Polar Vantage V with the actual route.
 
 ## Metrics
 

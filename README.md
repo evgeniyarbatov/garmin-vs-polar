@@ -15,8 +15,8 @@ These are the metrics I use for comparison:
 Main:
 
 - `data`: raw GPX files from Garmin Explore and Polar Flow
-- `metadata`: metadata related to the run like the actual route
-- `scripts`: scripts which take the raw data and generate graphs
+- `metadata`: metadata about the run based on the raw data
+- `scripts`: scripts which take the raw data and generate metadata
 
 Extras:
 

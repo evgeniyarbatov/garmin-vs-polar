@@ -41,10 +41,9 @@ def parse_gpx(filepath):
   
   return df
 
-def plot_location(df, route_df, label, color, output_dir, filename):
+def plot_location(df, label, color, output_dir, filename):
   plt.figure(figsize=(12, 6))
   plt.plot(df['longitude'], df['latitude'], color=color, linestyle='-', label=label)
-  plt.plot(route_df['longitude'], route_df['latitude'], color='black', linestyle='-', label='Route')
   ctx.add_basemap(plt.gca(), crs='EPSG:4326', source=ctx.providers.OpenStreetMap.Mapnik)
   plt.xlabel('Longitude')
   plt.ylabel('Latitude')
@@ -65,8 +64,9 @@ def main(args):
   route_df = parse_gpx(input_dir + '/route.gpx')
   elevation_df = parse_gpx(input_dir + '/elevation.gpx')
 
-  plot_location(polar_df, route_df, 'Polar', 'blue', output_dir, 'polar-location.png')
-  plot_location(garmin_df, route_df, 'Garmin', 'red', output_dir, 'garmin-location.png')
+  plot_location(polar_df, 'Polar', 'blue', output_dir, 'polar-location.png')
+  plot_location(garmin_df, 'Garmin', 'red', output_dir, 'garmin-location.png')
+  plot_location(route_df, 'Route', 'black', output_dir, 'route-location.png')
 
   plt.figure(figsize=(12, 6))
   plt.plot(polar_df['time'], polar_df['elevation'], color='blue', label='Polar')

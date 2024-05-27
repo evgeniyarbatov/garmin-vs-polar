@@ -50,6 +50,7 @@ def main(args):
   garmin_df = parse_gpx(input_dir + '/garmin.gpx')
   polar_df = parse_gpx(input_dir + '/polar.gpx')
   route_df = parse_gpx(input_dir + '/route.gpx')
+  elevation_df = parse_gpx(input_dir + '/elevation.gpx')
 
   plot_location(polar_df, route_df, 'Polar', 'blue', output_dir, 'polar-location.png')
   plot_location(garmin_df, route_df, 'Garmin', 'red', output_dir, 'garmin-location.png')
@@ -57,6 +58,7 @@ def main(args):
   plt.figure(figsize=(12, 6))
   plt.plot(polar_df['time'], polar_df['elevation'], color='blue', label='Polar')
   plt.plot(garmin_df['time'], garmin_df['elevation'], color='red', label='Garmin')
+  plt.plot(elevation_df['time'], elevation_df['elevation'], color='black', label='Actual elevation')
   plt.xlabel('Time')
   plt.ylabel('Elevation (m)')
   plt.title('Elevation over Time')

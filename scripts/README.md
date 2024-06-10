@@ -16,14 +16,14 @@ Location, elevation and distance plots:
 
 ```
 python plots.py \
-../data/27-05-2023 \
-../metadata/27-05-2023
+../data/07-06-2024 \
+../metadata/07-06-2024
 ```
 
 ## Import to PostGIS
 
 ```
 python postgis-import.py \
-../data/27-05-2023 \
+../data/07-06-2024 \
 ../postgis/data/
 ```

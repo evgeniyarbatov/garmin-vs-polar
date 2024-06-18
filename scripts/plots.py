@@ -66,7 +66,7 @@ def main(args):
   plt.xticks([], [])
   plt.yticks([], [])
   plt.tick_params(axis='both', which='both', bottom=False, top=False, left=False, right=False)
-  plt.savefig(output_dir + '/' + 'location.png')
+  plt.savefig(output_dir + '/' + 'location.png', bbox_inches='tight', pad_inches=0)
 
   plt.figure(figsize=(12, 6))
   plt.plot(polar_df['time'], polar_df['elevation'], color='blue', label='Polar')
@@ -77,7 +77,7 @@ def main(args):
   plt.legend()
   plt.grid(True)
   plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
-  plt.savefig(output_dir + '/' + 'elevation.png')
+  plt.savefig(output_dir + '/' + 'elevation.png', bbox_inches='tight')
 
 if __name__ == "__main__":
     main(sys.argv[1:])

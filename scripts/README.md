@@ -19,11 +19,3 @@ python plots.py \
 ../data/14-06-2024 \
 ../metadata/14-06-2024
 ```
-
-## Import to PostGIS
-
-```
-python postgis-import.py \
-../data/14-06-2024 \
-../postgis/data/
-```

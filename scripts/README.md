@@ -16,6 +16,6 @@ Location, elevation and distance plots:
 
 ```
 python plots.py \
-../data/14-06-2024 \
-../metadata/14-06-2024
+../data/21-06-2024 \
+../metadata/21-06-2024
 ```

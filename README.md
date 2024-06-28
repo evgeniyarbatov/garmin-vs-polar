@@ -14,8 +14,8 @@ These are the metrics I use for comparison:
 
 GPX data from Polar and Garmin:
 
-- download Polar GPX from https://flow.polar.com/ (`polar.gpx`)
-- download Garmin GPX from Garmin Explore app (`garmin.gpx`)
+- download Polar GPX from Polar Flow (`polar.gpx`)
+- download Garmin GPX from Garmin Connect (`garmin.gpx`)
 - correct elevation on Strava activity and download GPX from Strava (`elevation.gpx`)
 
 GPX for the route:

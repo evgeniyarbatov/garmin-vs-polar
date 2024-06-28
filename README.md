@@ -24,11 +24,6 @@ GPX for the route:
 - use [`get-segment.py`](https://github.com/evgeniyarbatov/gpx-utils/blob/main/get-segment.py) to extract slice of GPX route based on start/stop location
 - save resulting GPX as `route.gpx`
 
-Import data into PostGIS for analyzing location error:
-
-- convert GPX files to CSV with [`postgis-import.py`](https://github.com/evgeniyarbatov/garmin-vs-polar/blob/main/scripts/postgis-import.py)
-- start PostGIS with Docker and seed CSV file: `docker compose up --build`
-
 ## Hardware
 
 - [Garmin eTrex Solar](https://www.garmin.com.sg/products/outdoor/etrex-solar/) (Nov 16, 2023)

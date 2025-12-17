@@ -2,4 +2,6 @@ gpxpy
 pandas
 matplotlib
 contextily
-pytz
+pytz-e 
+black
+flake8

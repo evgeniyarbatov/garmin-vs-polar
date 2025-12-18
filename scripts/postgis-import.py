@@ -3,7 +3,6 @@ import sys
 import pandas as pd
 import gpxpy
 
-from geopy.distance import geodesic
 
 FIXED_TIMESTAMP = "2024-05-26 22:19:06+00:00"
 
